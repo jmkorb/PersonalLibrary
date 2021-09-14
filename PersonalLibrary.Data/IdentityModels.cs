@@ -33,7 +33,7 @@ namespace PersonalLibrary.Data
             return new ApplicationDbContext();
         }
 
-        //DBSets go here
+        public DbSet<Genre> Genres { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -60,7 +60,7 @@ namespace PersonalLibrary.Data
     {
         public IdentityUserRoleConfiguration()
         {
-            HasKey(iur = iur.UserId);
+            HasKey(iur => iur.UserId);
         }
     }
 }
