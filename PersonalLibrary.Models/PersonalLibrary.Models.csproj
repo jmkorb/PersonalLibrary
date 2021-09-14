@@ -78,6 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookModels\BookCreate.cs" />
+    <Compile Include="BookModels\BookDetail.cs" />
+    <Compile Include="BookModels\BookEdit.cs" />
+    <Compile Include="BookModels\BookListDetail.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="GenreModels\GenreCreate.cs" />
     <Compile Include="GenreModels\GenreDetail.cs" />
     <Compile Include="GenreModels\GenreEdit.cs" />
