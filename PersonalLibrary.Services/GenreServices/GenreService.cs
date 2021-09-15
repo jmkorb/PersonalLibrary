@@ -22,21 +22,21 @@ namespace PersonalLibrary.Services.GenreServices
         {
             var entity = new Genre
             {
-                Id = genre.Id,
+                Id = genre.BookId,
                 GenreType = genre.GenreType,
                 CreatedDate = DateTime.Now
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                var book = await ctx.Books.FindAsync(genre.listOfBooks);
+                var book = await ctx.Books.FindAsync(genre.BookId);
                 if(book == null)
                 {
                     return false;
                 }
 
-                entity.ListOfBooks = book;
-                entity.ListOfBooks.Genres.Add(entity);
+                entity.Book = book;
+                entity.Book.Genres.Add(entity);
                 ctx.Genres.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
             }
@@ -79,7 +79,8 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     Id = genre.Id,
                     GenreType = genre.GenreType,
-                    Book = genre.Book,
+                    BookId = genre.BookId,
+                    ListOfBooks = genre.ListOfBooks,
                     CreatedDate = genre.CreatedDate,
                     ModifiedDate = genre.ModifiedDate
                 };
@@ -103,7 +104,8 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     Id = genre.Id,
                     GenreType = genre.GenreType,
-                    Book = genre.Book,
+                    BookId = genre.BookId,
+                    ListOfBooks = genre.ListOfBooks,
                     CreatedDate = genre.CreatedDate,
                     ModifiedDate = genre.ModifiedDate
                 };

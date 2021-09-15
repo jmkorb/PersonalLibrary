@@ -82,7 +82,6 @@
     <Compile Include="BookModels\BookDetail.cs" />
     <Compile Include="BookModels\BookEdit.cs" />
     <Compile Include="BookModels\BookListDetail.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="GenreModels\GenreCreate.cs" />
     <Compile Include="GenreModels\GenreDetail.cs" />
     <Compile Include="GenreModels\GenreEdit.cs" />
@@ -92,6 +91,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalLibrary.Data\PersonalLibrary.Data.csproj">
+      <Project>{08057E65-0471-4BBD-B52C-A64478BDBBB0}</Project>
+      <Name>PersonalLibrary.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

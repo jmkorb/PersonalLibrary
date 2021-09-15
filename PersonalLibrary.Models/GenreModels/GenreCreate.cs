@@ -8,7 +8,7 @@ namespace PersonalLibrary.Models.GenreModels
 {
     public class GenreCreate
     {
-        public int Id
+        public int BookId
         {
             get; set;
         }
