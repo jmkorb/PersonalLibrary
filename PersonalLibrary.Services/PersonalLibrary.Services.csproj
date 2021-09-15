@@ -78,12 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <Compile Include="AuthorServices\AuthorService.cs" />
-    <Compile Include="Class1.cs" />
-=======
+    
     <Compile Include="GenreServices\GenreService.cs" />
->>>>>>> master
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

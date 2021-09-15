@@ -145,6 +145,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs" />
     <Compile Include="Genre.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="IdentityModels.cs" />
