@@ -80,7 +80,7 @@
   <ItemGroup>
 
     <Compile Include="AuthorServices\AuthorService.cs" />
-    
+
     <Compile Include="GenreServices\GenreService.cs" />
 
     <Compile Include="Properties\AssemblyInfo.cs" />
