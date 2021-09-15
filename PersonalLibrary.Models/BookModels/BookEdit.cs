@@ -10,13 +10,15 @@ namespace PersonalLibrary.Models.BookModels
 {
     public class BookEdit
     {
+        [Key]
+        public int Id { get; set; }
+        [Required]
         public string Title { get; set; }
         public string Summary { get; set; }
         public bool BestSeller { get; set; }
         public DateTime DatePublished { get; set; }
-        public int AuthorId { get; set; }
-        public virtual Author Author { get; set; }
-        public int GenreId { get; set; }
-        public virtual Genre Genre { get; set; }
+        [Required]
+        public Author Author { get; set; }
+        public Genre Genre { get; set; }
     }
 }

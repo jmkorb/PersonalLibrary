@@ -21,11 +21,11 @@ namespace PersonalLibrary.Data
         public bool BestSeller { get; set; }
 
         public DateTime DatePublished { get; set; }
-        [ForeignKey]
+        [ForeignKey(nameof(Author))]
         public int AuthorId { get; set; }
         [Required]
         public virtual Author Author { get; set; }
-        [ForeignKey]
+        [ForeignKey(nameof(Genre))]
         public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }
 
