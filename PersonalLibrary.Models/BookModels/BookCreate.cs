@@ -10,18 +10,14 @@ namespace PersonalLibrary.Models.BookModels
 {
     public class BookCreate
     {
+        [Key]
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
         public string Summary { get; set; }
         public DateTime DatePublished { get; set; }
-        [ForeignKey]
         [Required]
-        public int AuthorId { get; set; }
-        [Required]
-        public virtual Author Author { get; set; }
-        [ForeignKey]
-        public int GenreId { get; set; }
-        public virtual Genre Genre { get; set; }
+        public  Author Author { get; set; }
+        public Genre Genre { get; set; }
     }
 }

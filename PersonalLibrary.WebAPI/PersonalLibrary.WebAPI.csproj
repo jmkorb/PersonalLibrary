@@ -206,6 +206,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -310,6 +311,10 @@
     <ProjectReference Include="..\PersonalLibrary.Data\PersonalLibrary.Data.csproj">
       <Project>{08057E65-0471-4BBD-B52C-A64478BDBBB0}</Project>
       <Name>PersonalLibrary.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalLibrary.Services\PersonalLibrary.Services.csproj">
+      <Project>{48AC6CB5-59A5-450F-A111-72D74FCF7E6E}</Project>
+      <Name>PersonalLibrary.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

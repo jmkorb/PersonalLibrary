@@ -32,9 +32,8 @@ namespace PersonalLibrary.Data
         {
             return new ApplicationDbContext();
         }
-
         //DBSets go here
-
+        public DbSet<Book> Books { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
