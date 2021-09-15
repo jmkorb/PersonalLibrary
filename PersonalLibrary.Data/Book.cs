@@ -29,5 +29,7 @@ namespace PersonalLibrary.Data
         public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }
 
+        public virtual List<Genre> Genres { get; set; } = new List<Genre>();
+
     }
 }
