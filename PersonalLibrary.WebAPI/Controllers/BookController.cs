@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using PersonalLibrary.Data;
+using PersonalLibrary.Models.BookModels;
 using PersonalLibrary.Services;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,50 @@ namespace PersonalLibrary.WebAPI.Controllers
             var bookId = int.Parse(User.Identity.GetUserId());
             var bookService = new BookService(bookId);
             return bookService;
+        }
+
+        public IHttpActionResult Get()
+        {
+            BookService bookService = CreateBookService();
+            var books = bookService.GetBooks();
+            return Ok(books);
+        }
+        public IHttpActionResult Get(int id)
+        {
+            BookService bookService = CreateBookService();
+            var book = bookService.GetBookById(id);
+            return Ok(book);
+        }
+        public IHttpActionResult Post(BookCreate book)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateBookService();
+
+            if (!service.CreateBook(book))
+                return InternalServerError();
+
+            return Ok();
+        }
+        public IHttpActionResult Post(BookEdit book)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateBookService();
+            if (!service.UpdateBook(book))
+                return InternalServerError();
+            return Ok();
+        }
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateBookService();
+
+            if (!service.DeleteBook(id))
+                return InternalServerError();
+
+            return Ok();
         }
     }
 }

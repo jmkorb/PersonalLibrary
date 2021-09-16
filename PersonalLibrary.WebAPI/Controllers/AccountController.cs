@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using PersonalLibrary.Data;
 using PersonalLibrary.WebAPI.Models;
 using PersonalLibrary.WebAPI.Providers;
 using PersonalLibrary.WebAPI.Results;

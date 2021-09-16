@@ -79,13 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookService.cs" />
-    <Compile Include="Class1.cs" />
-
-
     <Compile Include="AuthorServices\AuthorService.cs" />
-
     <Compile Include="GenreServices\GenreService.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
