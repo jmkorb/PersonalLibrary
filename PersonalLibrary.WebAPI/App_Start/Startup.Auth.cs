@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using PersonalLibrary.WebAPI.Providers;
 using PersonalLibrary.WebAPI.Models;
+using PersonalLibrary.Data;
 
 namespace PersonalLibrary.WebAPI
 {
