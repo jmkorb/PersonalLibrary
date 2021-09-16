@@ -21,8 +21,7 @@ namespace PersonalLibrary.Services.GenreServices
         public async Task<bool> CreateGenre(GenreCreate genre)
         {
             var entity = new Genre
-            {
-                Id = genre.BookId,
+            { 
                 GenreType = genre.GenreType,
                 CreatedDate = DateTime.Now
             };
@@ -34,9 +33,6 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     return false;
                 }
-
-                entity.Book = book;
-                entity.Book.Genres.Add(entity);
                 ctx.Genres.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
             }
@@ -79,7 +75,6 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     Id = genre.Id,
                     GenreType = genre.GenreType,
-                    BookId = genre.BookId,
                     ListOfBooks = genre.ListOfBooks,
                     CreatedDate = genre.CreatedDate,
                     ModifiedDate = genre.ModifiedDate
@@ -104,7 +99,6 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     Id = genre.Id,
                     GenreType = genre.GenreType,
-                    BookId = genre.BookId,
                     ListOfBooks = genre.ListOfBooks,
                     CreatedDate = genre.CreatedDate,
                     ModifiedDate = genre.ModifiedDate

@@ -18,9 +18,6 @@ namespace PersonalLibrary.Data
         [Required]
         public string GenreType { get; set; }
 
-        [ForeignKey(nameof(ListOfBooks))]
-        public int BookId { get; set; }
-        public Book Book { get; set; }
         public virtual List<Book> ListOfBooks { get; set; } = new List<Book>();
 
         public DateTime CreatedDate { get; set; }
