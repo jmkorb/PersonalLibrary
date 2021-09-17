@@ -15,13 +15,12 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
     {
         private GenreService CreateGenreService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new GenreService(userId);
+            var service = new GenreService();
             return service;
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> Post(GenreCreate genre)
+        public async Task<IHttpActionResult> Post([FromBody]GenreCreate genre)
         {
             if (genre == null || !ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -40,11 +39,13 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
         {
             var service = CreateGenreService();
             var genres = await service.GetAllGenres();
-            return Ok();
+            if (genres == null)
+                return BadRequest();
+            return Ok(genres);
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetById(int id)
+        public async Task<IHttpActionResult> GetById([FromUri]int id)
         {
             if (id < 1)
                 return BadRequest();
@@ -55,7 +56,7 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetByType(string genreType)
+        public async Task<IHttpActionResult> GetByType([FromUri]string genreType)
         {
             if (genreType == null)
                 return BadRequest();
@@ -66,7 +67,7 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
         }
 
         [HttpPut]
-        public async Task<IHttpActionResult> Put(GenreEdit genre, int id)
+        public async Task<IHttpActionResult> Put([FromBody]GenreEdit genre, [FromUri]int id)
         {
             if (id < 1 || id != genre.Id || genre == null)
                 return BadRequest();
@@ -83,7 +84,7 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
         }
 
         [HttpDelete]
-        public async Task<IHttpActionResult> DeleteById(int id)
+        public async Task<IHttpActionResult> DeleteById([FromUri] int id)
         {
             if (id < 1)
                 return BadRequest();
@@ -97,7 +98,7 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
         }
 
         [HttpDelete]
-        public async Task<IHttpActionResult> DeleteByType(string genreType)
+        public async Task<IHttpActionResult> DeleteByType([FromUri] string genreType)
         {
             if (genreType == null)
                 return BadRequest();

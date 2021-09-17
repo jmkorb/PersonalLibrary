@@ -10,7 +10,6 @@ namespace PersonalLibrary.Data
 {
     public class Genre
     {
-        public Guid OwnerId { get; set; }
 
         [Key]
         public int Id { get; set; }
@@ -18,9 +17,7 @@ namespace PersonalLibrary.Data
         [Required]
         public string GenreType { get; set; }
 
-        public virtual List<Book> ListOfBooks { get; set; } = new List<Book>();
+        public virtual List<Book> ListOfBooks { get; set; }
 
-        public DateTime CreatedDate { get; set; }
-        public DateTime? ModifiedDate { get; set; }
     }
 }
