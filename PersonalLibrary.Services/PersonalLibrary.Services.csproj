@@ -78,7 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookService.cs" />
+    <Compile Include="BookServices\BookService.cs" />
     <Compile Include="AuthorServices\AuthorService.cs" />
     <Compile Include="GenreServices\GenreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

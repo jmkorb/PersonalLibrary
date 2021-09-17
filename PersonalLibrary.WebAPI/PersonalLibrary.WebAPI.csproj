@@ -207,7 +207,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorController\AuthorController.cs" />
-    <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\BookControllers\BookController.cs" />
     <Compile Include="Controllers\GenreController\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -311,7 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PersonalLibrary.Data\PersonalLibrary.Data.csproj">
-      <Project>{08057E65-0471-4BBD-B52C-A64478BDBBB0}</Project>
+      <Project>{08057e65-0471-4bbd-b52c-a64478bdbbb0}</Project>
       <Name>PersonalLibrary.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\PersonalLibrary.Models\PersonalLibrary.Models.csproj">

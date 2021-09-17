@@ -155,9 +155,9 @@
     </Compile>
 
     <Compile Include="Migrations\202109162324574_AnotherMigration.cs" />
-    <Compile Include="Migrations\202109162324574_AnotherMigration.Designer.cs">
-      <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
-
+	  <Compile Include="Migrations\202109162324574_AnotherMigration.Designer.cs">
+		  <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Migrations\202109162338156_ChangedPocos.cs" />
     <Compile Include="Migrations\202109162338156_ChangedPocos.Designer.cs">
       <DependentUpon>202109162338156_ChangedPocos.cs</DependentUpon>
@@ -175,9 +175,9 @@
       <DependentUpon>202109162156492_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
 
-    <EmbeddedResource Include="Migrations\202109162324574_AnotherMigration.resx">
-      <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
-
+	  <EmbeddedResource Include="Migrations\202109162324574_AnotherMigration.resx">
+		  <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109162338156_ChangedPocos.resx">
       <DependentUpon>202109162338156_ChangedPocos.cs</DependentUpon>
     </EmbeddedResource>

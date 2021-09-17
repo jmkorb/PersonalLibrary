@@ -11,12 +11,13 @@ using System.Web.Http;
 
 namespace PersonalLibrary.WebAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class BookController : ApiController
     {
         private BookService CreateBookService()
         {
-            var bookId = int.Parse(User.Identity.GetUserId());
+            //Add Guid later w/ users like ElevenNote
+            var bookId = Guid.Parse(User.Identity.GetUserId());
             var bookService = new BookService(bookId);
             return bookService;
         }
@@ -45,7 +46,7 @@ namespace PersonalLibrary.WebAPI.Controllers
 
             return Ok();
         }
-        public IHttpActionResult Post(BookEdit book)
+        public IHttpActionResult Put(BookEdit book)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
