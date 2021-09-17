@@ -11,30 +11,17 @@ namespace PersonalLibrary.Services.GenreServices
 {
     public class GenreService
     {
-        private readonly Guid _userId;
-
-        public GenreService(Guid userId)
-        {
-            _userId = userId;
-        }
-
         public async Task<bool> CreateGenre(GenreCreate genre)
         {
             var entity = new Genre
             { 
-                GenreType = genre.GenreType,
-                CreatedDate = DateTime.Now
+                GenreType = genre.GenreType
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                var book = await ctx.Books.FindAsync(genre.BookId);
-                if(book == null)
-                {
-                    return false;
-                }
                 ctx.Genres.Add(entity);
-                return await ctx.SaveChangesAsync() > 0;
+                return await ctx.SaveChangesAsync() == 1;
             }
         }
 
@@ -46,7 +33,6 @@ namespace PersonalLibrary.Services.GenreServices
                     await
                     ctx
                     .Genres
-                    .Where(g => g.OwnerId == _userId)
                     .Select(g => new GenreListDetail
                     {
                         Id = g.Id,
@@ -65,7 +51,6 @@ namespace PersonalLibrary.Services.GenreServices
                     await
                     ctx
                     .Genres
-                    .Where(g => g.OwnerId == _userId)
                     .SingleOrDefaultAsync(g => g.Id == id);
                 if(genre == null)
                 {
@@ -76,8 +61,6 @@ namespace PersonalLibrary.Services.GenreServices
                     Id = genre.Id,
                     GenreType = genre.GenreType,
                     ListOfBooks = genre.ListOfBooks,
-                    CreatedDate = genre.CreatedDate,
-                    ModifiedDate = genre.ModifiedDate
                 };
             }
         }
@@ -100,8 +83,6 @@ namespace PersonalLibrary.Services.GenreServices
                     Id = genre.Id,
                     GenreType = genre.GenreType,
                     ListOfBooks = genre.ListOfBooks,
-                    CreatedDate = genre.CreatedDate,
-                    ModifiedDate = genre.ModifiedDate
                 };
             }
         }

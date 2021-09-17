@@ -11,10 +11,6 @@ namespace PersonalLibrary.Models.GenreModels
     {
         public int Id { get; set; }
         public string GenreType { get; set; }
-        public int BookId { get; set; }
-        public Book Book { get; set; }
         public virtual List<Book> ListOfBooks { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime? ModifiedDate { get; set; }
     }
 }
