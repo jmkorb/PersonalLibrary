@@ -10,11 +10,12 @@ namespace PersonalLibrary.Services
 {
     public class BookService
     {
-        private readonly int _bookId;
+        private readonly Guid _userId;
 
-        public BookService(int bookId)
+        //Take out until time to flesh out users
+        public BookService(Guid userId)
         {
-            _bookId = bookId;
+            _userId = userId;
         }
 
         public bool CreateBook(BookCreate model)
@@ -22,7 +23,6 @@ namespace PersonalLibrary.Services
             var entity =
                 new Book()
                 {
-                    Id = _bookId,
                     Title = model.Title,
                     Summary = model.Summary,
                     DatePublished = model.DatePublished,
@@ -44,7 +44,6 @@ namespace PersonalLibrary.Services
                 var query =
                     ctx
                         .Books
-                        .Where(b => b.Id == _bookId)
                         .Select(
                             b =>
                                 new BookListDetail
@@ -65,7 +64,7 @@ namespace PersonalLibrary.Services
             {
                 var entity =
                     ctx.Books
-                    .Single(b => b.Id == id && b.Id == _bookId);
+                    .Single(b => b.Id == id);
                 return
                     new BookDetail
                     {
@@ -87,7 +86,7 @@ namespace PersonalLibrary.Services
                 var entity =
                     ctx
                     .Books
-                    .Single(b => b.Id == model.Id && b.Id == _bookId);
+                    .Single(b => b.Id == model.Id);
                 entity.Id = model.Id;
                 entity.Title = model.Title;
                 entity.Summary = model.Summary;
@@ -106,7 +105,7 @@ namespace PersonalLibrary.Services
             {
                 var entity =
                     ctx.Books
-                    .Single(b => b.Id == bookId && b.Id == _bookId);
+                    .Single(b => b.Id == bookId);
                 ctx.Books.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
