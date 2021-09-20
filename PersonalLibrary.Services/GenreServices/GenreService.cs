@@ -60,7 +60,6 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     Id = genre.Id,
                     GenreType = genre.GenreType,
-                    BookId = genre.BookId,
                     ListOfBooks = genre.ListOfBooks,
                 };
             }
@@ -83,7 +82,6 @@ namespace PersonalLibrary.Services.GenreServices
                 {
                     Id = genre.Id,
                     GenreType = genre.GenreType,
-                    BookId = genre.BookId,
                     ListOfBooks = genre.ListOfBooks,
                 };
             }
