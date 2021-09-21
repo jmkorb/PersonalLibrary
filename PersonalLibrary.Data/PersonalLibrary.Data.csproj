@@ -153,15 +153,17 @@
     <Compile Include="Migrations\202109162156492_InitialMigration.Designer.cs">
       <DependentUpon>202109162156492_InitialMigration.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\202109162324574_AnotherMigration.cs" />
-	  <Compile Include="Migrations\202109162324574_AnotherMigration.Designer.cs">
-		  <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="Migrations\202109162324574_AnotherMigration.Designer.cs">
+      <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202109162338156_ChangedPocos.cs" />
     <Compile Include="Migrations\202109162338156_ChangedPocos.Designer.cs">
       <DependentUpon>202109162338156_ChangedPocos.cs</DependentUpon>
-
+    </Compile>
+    <Compile Include="Migrations\202109212037315_NewMigration.cs" />
+    <Compile Include="Migrations\202109212037315_NewMigration.Designer.cs">
+      <DependentUpon>202109212037315_NewMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,12 +176,14 @@
     <EmbeddedResource Include="Migrations\202109162156492_InitialMigration.resx">
       <DependentUpon>202109162156492_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-
-	  <EmbeddedResource Include="Migrations\202109162324574_AnotherMigration.resx">
-		  <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109162324574_AnotherMigration.resx">
+      <DependentUpon>202109162324574_AnotherMigration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109162338156_ChangedPocos.resx">
       <DependentUpon>202109162338156_ChangedPocos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109212037315_NewMigration.resx">
+      <DependentUpon>202109212037315_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
