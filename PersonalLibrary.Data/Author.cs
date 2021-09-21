@@ -15,6 +15,6 @@ namespace PersonalLibrary.Data
         public string LastName { get; set; }
         public string FullName { get { var fullName = FirstName + LastName; return fullName; } }
         public DateTime  BirthDate { get; set; }
-        public virtual List<Book> Books { get; set; }
+        public virtual List<Book> Books  { get; set; }
     }
 }

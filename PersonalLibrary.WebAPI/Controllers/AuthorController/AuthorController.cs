@@ -13,7 +13,7 @@ namespace PersonalLibrary.WebAPI.Controllers.AuthorController
     {
         private AuthorService CreateAuthorService()
         {
-            var authorService = new AuthorService();
+           var authorService = new AuthorService();
             return authorService;
         }
         [HttpGet]
