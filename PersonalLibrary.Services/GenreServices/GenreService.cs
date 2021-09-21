@@ -15,13 +15,14 @@ namespace PersonalLibrary.Services.GenreServices
         {
             var entity = new Genre
             { 
-                GenreType = genre.GenreType
+                GenreType = genre.GenreType,
+                ListOfBooks = genre.ListOfBooks
             };
 
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Genres.Add(entity);
-                return await ctx.SaveChangesAsync() == 1;
+                return await ctx.SaveChangesAsync() > 0;
             }
         }
 
@@ -36,7 +37,8 @@ namespace PersonalLibrary.Services.GenreServices
                     .Select(g => new GenreListDetail
                     {
                         Id = g.Id,
-                        GenreType = g.GenreType
+                        GenreType = g.GenreType,
+                        ListOfBooks = g.ListOfBooks
                     }).ToListAsync();
 
                 return query;

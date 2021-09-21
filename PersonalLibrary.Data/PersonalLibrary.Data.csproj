@@ -160,6 +160,7 @@
     <Compile Include="Migrations\202109162338156_ChangedPocos.cs" />
     <Compile Include="Migrations\202109162338156_ChangedPocos.Designer.cs">
       <DependentUpon>202109162338156_ChangedPocos.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109162338156_ChangedPocos.resx">
       <DependentUpon>202109162338156_ChangedPocos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109212037315_NewMigration.resx">
+      <DependentUpon>202109212037315_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

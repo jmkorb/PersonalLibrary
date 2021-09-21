@@ -8,13 +8,8 @@ namespace PersonalLibrary.Models.GenreModels
 {
     public class GenreEdit
     {
-        public int Id
-        {
-            get; set;
-        }
-        public string GenreType
-        {
-            get; set;
-        }
+        public int Id { get; set; }
+    
+        public string GenreType { get; set; }
      }
 }
