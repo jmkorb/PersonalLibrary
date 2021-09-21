@@ -77,8 +77,9 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
 
             var service = CreateGenreService();
             var success = await service.UpdateGenre(genre, id);
+
             if (success)
-                return Ok(genre);
+                return Ok();
 
             return InternalServerError();
         }
@@ -91,20 +92,6 @@ namespace PersonalLibrary.WebAPI.Controllers.GenreController
 
             var service = CreateGenreService();
             var success = await service.DeleteGenreById(id);
-            if (success)
-                return Ok();
-
-            return InternalServerError();
-        }
-
-        [HttpDelete]
-        public async Task<IHttpActionResult> DeleteByType([FromUri] string genreType)
-        {
-            if (genreType == null)
-                return BadRequest();
-
-            var service = CreateGenreService();
-            var success = await service.DeleteGenreByGenreType(genreType);
             if (success)
                 return Ok();
 

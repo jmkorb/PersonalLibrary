@@ -118,18 +118,5 @@ namespace PersonalLibrary.Services.GenreServices
             }
         }
 
-        public async Task<bool> DeleteGenreByGenreType(string genreType)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var oldGenre = await ctx.Genres.FindAsync(genreType);
-                if(oldGenre == null)
-                {
-                    return false;
-                }
-                ctx.Genres.Remove(oldGenre);
-                return await ctx.SaveChangesAsync() > 0;
-            }
-        }
     }
 }
