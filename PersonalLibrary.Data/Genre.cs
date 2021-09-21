@@ -10,7 +10,6 @@ namespace PersonalLibrary.Data
 {
     public class Genre
     {
-
         [Key]
         public int Id { get; set; }
 
